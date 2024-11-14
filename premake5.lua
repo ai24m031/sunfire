@@ -45,7 +45,22 @@ project "Sunfire"
 			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
 		}
 
-	buildoptions "/utf-8"
+        buildoptions "/utf-8"
+
+	filter "system:macosx"
+		cppdialect "C++17"
+		staticruntime "On"
+
+		defines
+		{
+			"SUNFIRE_PLATFORM_MACOS",
+			"SUNFIRE_BUILD_DLL"
+		}
+
+		postbuildcommands
+		{
+			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+		}
 
 	filter "configurations:Debug"
 		defines "SUNFIRE_DEBUG"
@@ -70,7 +85,7 @@ project "Sandbox"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
-	files 
+	files
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
@@ -92,12 +107,21 @@ project "Sandbox"
 		staticruntime "On"
 		systemversion "10.0.22621.0"
 
-		defines 
+		defines
 		{
 			"SUNFIRE_PLATFORM_WINDOWS"
 		}
 
-	buildoptions "/utf-8"
+        buildoptions "/utf-8"
+
+	filter "system:macosx"
+		cppdialect "C++17"
+		staticruntime "On"
+
+		defines
+		{
+			"SUNFIRE_PLATFORM_MACOS"
+		}
 
 	filter "configurations:Debug"
 		defines "SUNFIRE_DEBUG"

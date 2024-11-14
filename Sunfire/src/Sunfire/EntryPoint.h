@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef SUNFIRE_PLATFORM_WINDOWS
+#if defined(SUNFIRE_PLATFORM_WINDOWS) || defined(SUNFIRE_PLATFORM_MACOS)
 
 extern Sunfire::Application* Sunfire::CreateApplication();
 

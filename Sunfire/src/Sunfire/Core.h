@@ -6,6 +6,12 @@
 	#else
 		#define SUNFIRE_API __declspec(dllimport)
 	#endif
-#else 
+#elif SUNFIRE_PLATFORM_MACOS
+	#ifdef SUNFIRE_BUILD_DLL
+		#define SUNFIRE_API __attribute__((visibility("default")))
+	#else
+		#define SUNFIRE_API __attribute__((visibility("default")))
+	#endif
+#else
 	#error Sunfire only supports Windows!
 #endif
