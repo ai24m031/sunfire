@@ -41,14 +41,18 @@ project "Sunfire"
 
 	links
 	{
-		"GLFW",
-		"opengl32.lib"
+		"GLFW"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
 		systemversion "10.0.22621.0"
+
+        links
+        {
+            "opengl32.lib"
+        }
 
 		defines 
 		{
@@ -66,6 +70,14 @@ project "Sunfire"
 	filter "system:macosx"
 		cppdialect "C++17"
 		staticruntime "On"
+
+        links {
+            "OpenGL.framework",     -- OpenGL support
+            "Cocoa.framework",      -- macOS UI and event handling
+            "IOKit.framework",      -- Input/output kit (e.g., joystick support)
+            "CoreVideo.framework",  -- Video-related functions
+            "CoreFoundation.framework", -- Base macOS functions
+        }
 
 		defines
 		{
