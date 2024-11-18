@@ -29,8 +29,8 @@ namespace Sunfire {
 #define SUNFIRE_CORE_CRITICAL(...)		::Sunfire::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 // Client log macros
-#define SUNFIRE_TRACE(...)		::Sunfire::Log::GetClientLogger()->trace(__VA_ARGS__)
-#define SUNFIRE_INFO(...)		::Sunfire::Log::GetClientLogger()->info(__VA_ARGS__)
-#define SUNFIRE_WARN(...)		::Sunfire::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define SUNFIRE_ERROR(...)		::Sunfire::Log::GetClientLogger()->error(__VA_ARGS__)
-#define SUNFIRE_CRITICAL(...)	::Sunfire::Log::GetClientLogger()->critical(__VA_ARGS__)
+#define SUNFIRE_TRACE(...)				::Sunfire::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define SUNFIRE_INFO(...)				::Sunfire::Log::GetClientLogger()->info(__VA_ARGS__)
+#define SUNFIRE_WARN(...)				::Sunfire::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define SUNFIRE_ERROR(...)				::Sunfire::Log::GetClientLogger()->error(__VA_ARGS__)
+#define SUNFIRE_CRITICAL(...)			::Sunfire::Log::GetClientLogger()->critical(__VA_ARGS__)
