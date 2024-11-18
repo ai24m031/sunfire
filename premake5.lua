@@ -18,6 +18,9 @@ project "Sunfire"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "sunfirepch.h"
+	pchsource "Sunfire/src/sunfirepch.cpp"
+
 	files 
 	{
 		"%{prj.name}/src/**.h",

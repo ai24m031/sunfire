@@ -1,3 +1,4 @@
+#include "sunfirepch.h"
 #include "Application.h"
 
 #include "Sunfire/Events/ApplicationEvent.h"
